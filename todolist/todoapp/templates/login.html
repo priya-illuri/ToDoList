@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body >
+
+    <div class="container" >
+        <div class="col-xs-6">
+             <form method="post">
+                 <fieldset>
+                     <legend>Login</legend>
+                     {% csrf_token %}
+                 <div class="form-group" align="center">
+                     <br>
+                     <div>
+                     <label for="{{form.username.id_for_label}}">Username</label>
+                     {{form.username}}
+                     </div>
+                     <br>
+                     <div>
+                     <label for="{{form.password.id_for_label}}">Password</label>
+                     {{form.password}}
+                     </div>
+                     <br>
+                 </div>
+                     <div align="center">
+                     <input type="submit" value="login"/>
+                 </div>
+                     <br>
+
+                 </fieldset>
+             </form>
+        </div>
+    </div>
+
+</body>
+</html>

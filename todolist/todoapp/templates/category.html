@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+<center>
+<h1>Credit card details :{{user}} </h1>
+
+<h4><a  class="btn btn-info" href="{% url 'add_tasks_html'   %}" >Add task </a></h4>
+
+<table class="table">
+    <tr class="danger">
+            <th>Category</th>
+            <th></th>
+    </tr>
+    <tr>
+        {% for i in allcategories %}
+        <tr class="success">
+        <td>{{i.category}}</td>
+        <td><a  class="btn btn-info" href="{% url 'category_detail_html' i.category %}" >View in detail </a></td>
+        </tr>
+    </tr>
+    {% endfor %}
+
+</table>
+    </center>
+</body>
+</html>

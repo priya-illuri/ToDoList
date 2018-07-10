@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+<center>
+<h1>Logged in as  :{{user}} </h1>
+
+<table class="table">
+    <tr class="danger">
+            <th>Category</th>
+            <th>Task Name</th>
+            <th>Task Details</th>
+            <th>Created Date</th>
+            <th>Due Date</th>
+            <th></th>
+            <th></th>
+    </tr>
+    <tr>
+        {% for i in allusers %}
+        <tr class="success">
+        <td>{{i.category}}</td>
+        <td>{{i.task_name}}</td>
+        <td>{{i.task_desc}}</td>
+        <td>{{i.currentdate}}</td>
+        <td>{{i.duedate}}</td>
+        <td><a  class="btn btn-info" href="{% url 'update_html' i.id %}" >edit </a></td>
+        <td><a  class="btn btn-info" href="{% url 'delete_html' i.id %}" >delete </a></td><br>
+        </tr>
+    </tr>
+    {% endfor %}
+
+</table>
+    </center>
+</body>
+</html>
